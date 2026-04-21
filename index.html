@@ -194,7 +194,20 @@
 
           <div class="mini-cta">
             <p class="mini-cta__text">Хочешь так же?</p>
-            <a class="btn btn--primary" href="#letsgo">Присоединяйся</a>
+            <button class="btn btn--primary mini-cta__toggle" type="button" data-mini-cta-toggle>Присоединяйся</button>
+            <form class="mini-cta__form" hidden>
+              <label>
+                <span>Ваш контакт (Telegram или email)</span>
+                <input type="text" name="contact" required placeholder="@username или email" />
+              </label>
+              <label>
+                <span>Что хотите спросить</span>
+                <textarea name="message" rows="3" placeholder="Даты, уровень, любые вопросы"></textarea>
+              </label>
+              <button class="btn btn--primary" type="submit">Отправить</button>
+              <p class="mini-cta__hint"><a href="https://t.me/bb_travel74" target="_blank" rel="noopener">или напишите нам в Telegram →</a></p>
+              <div class="mini-cta__thanks" hidden>Скопировали сообщение — вставьте в <a href="https://t.me/bb_travel74" target="_blank" rel="noopener">наш Telegram</a>.</div>
+            </form>
           </div>
 
           <!-- DAY 5 — Termessos + Lycian Way -->
@@ -218,12 +231,12 @@
           </article>
 
           <div class="day-photos" aria-hidden="true">
+            <img src="assets/img/climbing-web/from_chris/IMG_20260412_191807.jpg" alt="" title="Бухта с высоты" data-tags="ликийская тропа,пейзаж" />
             <img src="assets/img/climbing-web/from_serg/PXL_20260412_144606580.PORTRAIT.jpg" alt="" title="В лучах заката" data-tags="Юля,ликийская тропа,портрет" />
             <img src="assets/img/climbing-web/from_ivan/IMG_8716.jpg" alt="" title="Над бирюзой" data-tags="ликийская тропа,пейзаж" />
             <img src="assets/img/climbing-web/from_serg/PXL_20260412_160809196.PORTRAIT.ORIGINAL.jpg" alt="" title="Двое на тропе" data-tags="Юля,ликийская тропа,хайкинг" />
             <img src="assets/img/climbing-web/from_ksenia/IMG_1445.JPG" alt="" title="Закат между скал" data-tags="ликийская тропа,пейзаж" />
             <img src="assets/img/climbing-web/from_chris/IMG_20260412_130953.jpg" alt="" title="Театр над облаками" data-tags="Termessos,пейзаж" />
-            <img src="assets/img/climbing-web/from_chris/IMG_20260412_191807.jpg" alt="" title="Бухта с высоты" data-tags="ликийская тропа,пейзаж" />
             <img src="assets/img/climbing-web/from_serg/PXL_20260412_144559044.jpg" alt="" title="Побережье с высоты" data-tags="ликийская тропа,пейзаж" />
             <img src="assets/img/climbing-web/from_ivan/IMG_1731.jpg" alt="" title="Свобода в горах" data-tags="Termessos,отдых" />
             <img src="assets/img/climbing-web/from_ivan/IMG_8648.jpg" alt="" title="Руины и небо" data-tags="Termessos,хайкинг" />
@@ -288,7 +301,7 @@
                 <li><span class="time">09:00</span><span class="what">Паркуемся, 20 минут пешком по галечному пляжу до сектора.</span></li>
                 <li><span class="time">09:30</span><span class="what">Первый маршрут над водой. Солнце ещё мягкое, камень тёплый.</span></li>
                 <li><span class="time">13:00</span><span class="what">Обед прямо на камнях у воды. Кого потянуло спать, идут искупнуться в бодрящей водичке.</span></li>
-                <li><span class="time">14:00</span><span class="what">Основная сессия. Игорь читает маршрут и подсказывает движения.</span></li>
+                <li><span class="time">14:00</span><span class="what">Основная сессия. Артём и Игорь читают маршруты, подсказывают движения.</span></li>
                 <li><span class="time">16:00</span><span class="what">Между попытками купание. Холодная вода возвращает пальцам хват, а тебе — веру в себя.</span></li>
                 <li><span class="time">18:30</span><span class="what">Сборы, возвращение на базу. В машине все молчат: соль, солнце, три редпоинта.</span></li>
                 <li><span class="time">20:00</span><span class="what">Ужин на базе, разбор дня, <strong>похвала</strong> от тренеров, турецкая <strong>пахлава</strong>. Не путать!</span></li>
@@ -367,6 +380,24 @@
             <img src="assets/img/climbing-web/from_vlad/IMG20260414170549.jpg" alt="" />
           </div>
 
+          <div class="mini-cta">
+            <p class="mini-cta__text">Хочешь так же?</p>
+            <button class="btn btn--primary mini-cta__toggle" type="button" data-mini-cta-toggle>Присоединяйся</button>
+            <form class="mini-cta__form" hidden>
+              <label>
+                <span>Ваш контакт (Telegram или email)</span>
+                <input type="text" name="contact" required placeholder="@username или email" />
+              </label>
+              <label>
+                <span>Что хотите спросить</span>
+                <textarea name="message" rows="3" placeholder="Даты, уровень, любые вопросы"></textarea>
+              </label>
+              <button class="btn btn--primary" type="submit">Отправить</button>
+              <p class="mini-cta__hint"><a href="https://t.me/bb_travel74" target="_blank" rel="noopener">или напишите нам в Telegram →</a></p>
+              <div class="mini-cta__thanks" hidden>Скопировали сообщение — вставьте в <a href="https://t.me/bb_travel74" target="_blank" rel="noopener">наш Telegram</a>.</div>
+            </form>
+          </div>
+
           <!-- DAY 8 — Hammam, shopping, Yanartaş -->
           <article class="day day--rest" id="day8">
             <div class="day__body">
@@ -420,7 +451,7 @@
               <ol class="day__timeline day__timeline--tab" data-idx="1">
                 <li><span class="time">09:00</span><span class="what">Завтрак, сборы, упаковка. Последний кофе на балконе.</span></li>
                 <li><span class="time">12:00</span><span class="what">Трансфер в аэропорт Антальи. Дорога час, можно поспать. А нет — «Глициния!»</span></li>
-                <li><span class="time">13:00</span><span class="what">Аэропорт. До следующего выезда. Глициния!</span></li>
+                <li><span class="time">13:00</span><span class="what">Аэропорт. До следующего выезда.</span></li>
               </ol>
               </div>
             </div>
@@ -580,10 +611,10 @@
       <span class="eyebrow">Как выглядит работа тренера</span>
       <h2>Тренер разбирает маршрут</h2>
       <p class="section-lead">Игорь читает маршрут, показывает зацепы и объясняет движения. Так выглядит работа над трассой.</p>
-      <div class="coaching-video__placeholder">
-        <div class="coaching-video__icon">▶</div>
-        <p>Видео скоро появится</p>
-      </div>
+      <video class="coaching-video__player" controls playsinline preload="metadata">
+        <source src="assets/video/coaching.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает встроенные видео.
+      </video>
     </section>
 
     <section class="reviews" id="reviews">
@@ -745,6 +776,31 @@
       if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
       contactForm.hidden = true;
       contactThanks.hidden = false;
+    });
+
+    document.querySelectorAll('.mini-cta').forEach(function (block) {
+      var toggle = block.querySelector('[data-mini-cta-toggle]');
+      var text = block.querySelector('.mini-cta__text');
+      var form = block.querySelector('.mini-cta__form');
+      var thanks = block.querySelector('.mini-cta__thanks');
+      if (!toggle || !form) return;
+      toggle.addEventListener('click', function () {
+        form.hidden = false;
+        toggle.hidden = true;
+        if (text) text.hidden = true;
+        var first = form.querySelector('input');
+        if (first) setTimeout(function () { first.focus(); }, 60);
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        var text = 'Здравствуйте! Хочу узнать про выезд.\n\n'
+          + 'Контакт: ' + (data.get('contact') || '') + '\n'
+          + (data.get('message') ? 'Вопрос: ' + data.get('message') : '');
+        if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
+        Array.prototype.forEach.call(form.children, function (child) { child.hidden = true; });
+        if (thanks) thanks.hidden = false;
+      });
     });
 
     var voteForm = document.getElementById('voteForm');

@@ -734,8 +734,8 @@ section {
     align-self: flex-start;
   }
   .day-nav::before {
-    top: 2.5rem;
-    bottom: 0;
+    top: calc(2.5rem + var(--nav-max-circle) / 2);
+    bottom: calc(var(--nav-max-circle) / 2);
     left: calc(1rem + var(--nav-max-circle) / 2 - 1px);
     right: auto;
     width: 2px;
@@ -1062,15 +1062,67 @@ section {
 /* Mini CTA (inline between days) */
 .mini-cta {
   text-align: center;
-  padding: 3rem 0;
+  padding: 2.5rem 0 3rem;
   margin: 1rem 0 3rem;
-  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .mini-cta__text {
   font-size: clamp(1.3rem, 2.8vw, 1.8rem);
   font-weight: 600;
   margin-bottom: 1.2rem;
+}
+.mini-cta__form {
+  max-width: 440px;
+  margin: 1.5rem auto 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.mini-cta__form[hidden],
+.mini-cta__toggle[hidden],
+.mini-cta__text[hidden] { display: none !important; }
+.mini-cta__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.mini-cta__form label > span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.mini-cta__form input,
+.mini-cta__form textarea {
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  resize: vertical;
+}
+.mini-cta__form input:focus,
+.mini-cta__form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.mini-cta__hint {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  color: var(--fg);
+}
+.mini-cta__hint a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.mini-cta__thanks {
+  text-align: center;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 12px;
+  font-size: 0.95rem;
 }
 
 /* Accommodation (two-format section) */
@@ -1137,7 +1189,7 @@ section {
   font-weight: 700;
 }
 .accommodation__note {
-  text-align: center;
+  text-align: left;
   font-size: 0.92rem;
   margin-top: 0.5rem;
 }
@@ -1172,6 +1224,15 @@ section {
 .coaching-video__placeholder p {
   font-size: 0.95rem;
   margin: 0;
+}
+.coaching-video__player {
+  width: 100%;
+  max-width: 560px;
+  max-height: 70vh;
+  margin: 2rem auto 0;
+  display: block;
+  border-radius: var(--radius);
+  background: #000;
 }
 
 /* Footer */
