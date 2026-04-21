@@ -194,20 +194,7 @@
 
           <div class="mini-cta">
             <p class="mini-cta__text">Хочешь так же?</p>
-            <button class="btn btn--primary mini-cta__toggle" type="button" data-mini-cta-toggle>Присоединяйся</button>
-            <form class="mini-cta__form" hidden>
-              <label>
-                <span>Ваш контакт (Telegram или email)</span>
-                <input type="text" name="contact" required placeholder="@username или email" />
-              </label>
-              <label>
-                <span>Что хотите спросить</span>
-                <textarea name="message" rows="3" placeholder="Даты, уровень, любые вопросы"></textarea>
-              </label>
-              <button class="btn btn--primary" type="submit">Отправить</button>
-              <p class="mini-cta__hint"><a href="https://t.me/bb_travel74" target="_blank" rel="noopener">или напишите нам в Telegram →</a></p>
-              <div class="mini-cta__thanks" hidden>Скопировали сообщение — вставьте в <a href="https://t.me/bb_travel74" target="_blank" rel="noopener">наш Telegram</a>.</div>
-            </form>
+            <a class="btn btn--primary" href="#contact" data-open-contact>Присоединяйся</a>
           </div>
 
           <!-- DAY 5 — Termessos + Lycian Way -->
@@ -382,20 +369,7 @@
 
           <div class="mini-cta">
             <p class="mini-cta__text">Хочешь так же?</p>
-            <button class="btn btn--primary mini-cta__toggle" type="button" data-mini-cta-toggle>Присоединяйся</button>
-            <form class="mini-cta__form" hidden>
-              <label>
-                <span>Ваш контакт (Telegram или email)</span>
-                <input type="text" name="contact" required placeholder="@username или email" />
-              </label>
-              <label>
-                <span>Что хотите спросить</span>
-                <textarea name="message" rows="3" placeholder="Даты, уровень, любые вопросы"></textarea>
-              </label>
-              <button class="btn btn--primary" type="submit">Отправить</button>
-              <p class="mini-cta__hint"><a href="https://t.me/bb_travel74" target="_blank" rel="noopener">или напишите нам в Telegram →</a></p>
-              <div class="mini-cta__thanks" hidden>Скопировали сообщение — вставьте в <a href="https://t.me/bb_travel74" target="_blank" rel="noopener">наш Telegram</a>.</div>
-            </form>
+            <a class="btn btn--primary" href="#contact" data-open-contact>Присоединяйся</a>
           </div>
 
           <!-- DAY 8 — Hammam, shopping, Yanartaş -->
@@ -776,31 +750,6 @@
       if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
       contactForm.hidden = true;
       contactThanks.hidden = false;
-    });
-
-    document.querySelectorAll('.mini-cta').forEach(function (block) {
-      var toggle = block.querySelector('[data-mini-cta-toggle]');
-      var text = block.querySelector('.mini-cta__text');
-      var form = block.querySelector('.mini-cta__form');
-      var thanks = block.querySelector('.mini-cta__thanks');
-      if (!toggle || !form) return;
-      toggle.addEventListener('click', function () {
-        form.hidden = false;
-        toggle.hidden = true;
-        if (text) text.hidden = true;
-        var first = form.querySelector('input');
-        if (first) setTimeout(function () { first.focus(); }, 60);
-      });
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var data = new FormData(form);
-        var text = 'Здравствуйте! Хочу узнать про выезд.\n\n'
-          + 'Контакт: ' + (data.get('contact') || '') + '\n'
-          + (data.get('message') ? 'Вопрос: ' + data.get('message') : '');
-        if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
-        Array.prototype.forEach.call(form.children, function (child) { child.hidden = true; });
-        if (thanks) thanks.hidden = false;
-      });
     });
 
     var voteForm = document.getElementById('voteForm');
