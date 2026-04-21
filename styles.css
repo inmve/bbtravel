@@ -183,28 +183,6 @@ section {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
-.photo-break--contain {
-  aspect-ratio: auto;
-  max-height: none;
-  background: none;
-  width: 100%;
-  margin: 2rem auto;
-  padding: 0.6rem;
-  background-color: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: center;
-}
-.photo-break--contain img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 72vh;
-  object-fit: contain;
-  border-radius: calc(var(--radius) - 4px);
-}
 
 /* Facts strip (reused) */
 .facts {
