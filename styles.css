@@ -694,6 +694,9 @@ section {
     margin: 0;
     flex-shrink: 0;
   }
+  .day-nav__item:hover .day-nav__num {
+    transform: translateY(-50%) scale(1.12);
+  }
   .day-nav__label {
     text-align: left;
     font-size: 0.9rem;
