@@ -71,7 +71,10 @@ section {
   display: inline-block;
   padding: 0.95rem 1.8rem;
   border-radius: 999px;
+  border: none;
+  font: inherit;
   font-weight: 600;
+  cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .btn--primary { background: var(--accent); color: #fff; }
@@ -639,7 +642,8 @@ section {
 .contact-form input:focus,
 .contact-form textarea:focus { outline: 2px solid var(--accent, #c8553d); outline-offset: -1px; }
 .contact-form .btn { margin-top: 0.3rem; }
-.contact-form__hint { font-size: 0.8rem; text-align: center; margin: 0.5rem 0 0; }
+.contact-form__hint { font-size: 0.9rem; text-align: center; margin: 0.6rem 0 0; color: var(--muted); }
+.contact-form__hint a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .contact-modal__thanks { text-align: center; padding: 1rem 0; }
 .contact-modal__thanks .btn { margin-top: 0.8rem; }
 @media (max-width: 560px) {
