@@ -16,7 +16,7 @@
       <a href="#place">Локация</a>
       <a href="#itinerary">Как проходит</a>
       <a href="#trainers">Тренеры</a>
-      <a href="#contact">Связаться</a>
+      <a href="#contact" data-open-contact>Связаться</a>
     </nav>
   </header>
 
@@ -285,7 +285,7 @@
               <ol class="day__timeline day__timeline--tab is-active" data-idx="0">
                 <li><span class="time">07:00</span><span class="what">Ранний завтрак, сборы. Сегодня везём с собой полотенца и арбуз.</span></li>
                 <li><span class="time">08:00</span><span class="what">Выезд к морю. По дороге: как видим собаку или кошку — кричим, чтобы водитель точно заметил.</span></li>
-                <li><span class="time">09:00</span><span class="what">Паркуемся, 20 минут пешком по галечному пляжу до сектора. Несём гиру и верёвки.</span></li>
+                <li><span class="time">09:00</span><span class="what">Паркуемся, 20 минут пешком по галечному пляжу до сектора.</span></li>
                 <li><span class="time">09:30</span><span class="what">Первый маршрут над водой. Солнце ещё мягкое, камень тёплый.</span></li>
                 <li><span class="time">13:00</span><span class="what">Обед прямо на камнях у воды. Кого потянуло спать, идут искупнуться в бодрящей водичке.</span></li>
                 <li><span class="time">14:00</span><span class="what">Основная сессия. Игорь читает маршрут и подсказывает движения.</span></li>
@@ -509,7 +509,7 @@
             <li>Атмосфера команды</li>
             <li>Дешевле</li>
           </ul>
-          <a class="btn btn--primary" href="#contact">Запросить цену</a>
+          <a class="btn btn--primary" href="#contact" data-open-contact>Запросить цену</a>
         </div>
         <div class="accommodation__card">
           <div class="accommodation__icon">🏨</div>
@@ -520,7 +520,7 @@
             <li>Ближе к городу</li>
             <li>Гибкий график вечеров</li>
           </ul>
-          <a class="btn btn--primary" href="#contact">Узнать подробнее</a>
+          <a class="btn btn--primary" href="#contact" data-open-contact>Узнать подробнее</a>
         </div>
       </div>
       <p class="accommodation__note muted">Цена зависит от локации и дат выезда. Напишите, и мы подберём вариант.</p>
@@ -660,6 +660,37 @@
     <img class="lightbox__img" alt="" />
   </div>
 
+  <div class="contact-modal" id="contactModal" aria-hidden="true" role="dialog" aria-label="Связаться с нами">
+    <div class="contact-modal__backdrop" data-close></div>
+    <div class="contact-modal__box">
+      <button class="contact-modal__close" type="button" aria-label="Закрыть" data-close>×</button>
+      <span class="eyebrow">Связаться</span>
+      <h3>Расскажите, куда и когда</h3>
+      <p class="muted">Подберём формат, даты и стоимость. Ответим в Telegram в течение дня.</p>
+      <form class="contact-form" id="contactForm">
+        <label>
+          <span>Ваше имя</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label>
+          <span>Telegram или email</span>
+          <input type="text" name="contact" required placeholder="@username или email" />
+        </label>
+        <label>
+          <span>Что интересно</span>
+          <textarea name="message" rows="3" placeholder="Даты, уровень, вопросы — всё пригодится"></textarea>
+        </label>
+        <button class="btn btn--primary" type="submit">Отправить</button>
+        <p class="contact-form__hint muted">Или напишите напрямую — <a href="https://t.me/bb_travel74" target="_blank" rel="noopener">@bb_travel74</a></p>
+      </form>
+      <div class="contact-modal__thanks" hidden>
+        <h3>Сообщение скопировано</h3>
+        <p>Откройте Telegram и вставьте его — ответим быстрее.</p>
+        <a class="btn btn--primary" href="https://t.me/bb_travel74" target="_blank" rel="noopener">Открыть Telegram</a>
+      </div>
+    </div>
+  </div>
+
   <script>
     var lightbox = document.getElementById('lightbox');
     var lightboxImg = lightbox.querySelector('.lightbox__img');
@@ -676,6 +707,45 @@
     lightbox.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeLightbox();
+    });
+
+    var contactModal = document.getElementById('contactModal');
+    var contactForm = document.getElementById('contactForm');
+    var contactThanks = contactModal.querySelector('.contact-modal__thanks');
+    function openContactModal() {
+      contactModal.classList.add('is-open');
+      contactModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      var first = contactForm.querySelector('input[name="name"]');
+      if (first && !contactForm.hidden) setTimeout(function () { first.focus(); }, 60);
+    }
+    function closeContactModal() {
+      contactModal.classList.remove('is-open');
+      contactModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('[data-open-contact]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        openContactModal();
+      });
+    });
+    contactModal.querySelectorAll('[data-close]').forEach(function (el) {
+      el.addEventListener('click', closeContactModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && contactModal.classList.contains('is-open')) closeContactModal();
+    });
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(contactForm);
+      var text = 'Здравствуйте! Хочу узнать про выезд.\n\n'
+        + 'Имя: ' + (data.get('name') || '') + '\n'
+        + 'Контакт: ' + (data.get('contact') || '') + '\n'
+        + (data.get('message') ? 'Вопрос: ' + data.get('message') : '');
+      if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
+      contactForm.hidden = true;
+      contactThanks.hidden = false;
     });
 
     var voteForm = document.getElementById('voteForm');

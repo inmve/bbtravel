@@ -579,6 +579,74 @@ section {
   padding: 0.5rem 1rem;
 }
 
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 150;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.contact-modal.is-open { display: block; }
+.contact-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.contact-modal__box {
+  position: relative;
+  max-width: 480px;
+  margin: 5vh auto;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 2rem 2rem 1.8rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  animation: modal-in 0.2s ease-out;
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.contact-modal__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: transparent;
+  border: 0;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0.3rem 0.7rem;
+}
+.contact-modal__close:hover { color: var(--fg); }
+.contact-modal h3 { margin: 0.3rem 0 0.5rem; font-size: 1.4rem; }
+.contact-modal p { margin: 0 0 1.2rem; }
+.contact-form { display: flex; flex-direction: column; gap: 0.9rem; }
+.contact-form label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; color: var(--muted); }
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--fg);
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus { outline: 2px solid var(--accent, #c8553d); outline-offset: -1px; }
+.contact-form .btn { margin-top: 0.3rem; }
+.contact-form__hint { font-size: 0.8rem; text-align: center; margin: 0.5rem 0 0; }
+.contact-modal__thanks { text-align: center; padding: 1rem 0; }
+.contact-modal__thanks .btn { margin-top: 0.8rem; }
+@media (max-width: 560px) {
+  .contact-modal { padding: 0.5rem; }
+  .contact-modal__box { margin: 1.5rem auto; padding: 1.5rem 1.2rem; }
+}
+
 .day-nav {
   --nav-max-circle: 4rem;
   --nav-line-y: 2rem;
