@@ -67,30 +67,28 @@ section {
 }
 
 .mobile-contact-cta {
-  display: none;
+  display: inline-flex;
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
+  right: 1.2rem;
+  bottom: 1.2rem;
   z-index: 40;
-  padding: 0.55rem 0.95rem;
+  padding: 0.6rem 1rem;
   border-radius: 999px;
   background: rgba(30, 30, 30, 0.6);
   color: #fff;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 500;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 4px 14px rgba(0,0,0,0.2);
   text-decoration: none;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.15s;
 }
 .mobile-contact-cta svg { flex-shrink: 0; }
-.mobile-contact-cta:active { background: rgba(30, 30, 30, 0.8); }
-@media (max-width: 720px) {
-  .mobile-contact-cta { display: inline-flex; }
-}
+.mobile-contact-cta:hover { background: rgba(30, 30, 30, 0.8); transform: translateY(-1px); }
+.mobile-contact-cta:active { background: rgba(30, 30, 30, 0.85); }
 
 /* Buttons */
 .btn {
