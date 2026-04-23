@@ -733,7 +733,6 @@ section {
   font-size: 0.75rem;
   letter-spacing: 0.03em;
   color: var(--muted);
-  text-transform: lowercase;
   text-align: center;
   line-height: 1.3;
 }
